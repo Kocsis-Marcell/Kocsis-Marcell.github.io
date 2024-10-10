@@ -57,15 +57,54 @@ nav ul li a:hover {
 
 /* Rólam szekció */
 .about {
-    background-color: #57cc99; /* Világos zöld szekció háttér */
+    background-color: #57cc99;
     padding: 40px 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.about h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #ffffff; /* Fehér szöveg */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Több helyet biztosít a szekciónak */
+    margin: 0 auto;
+    position: relative;
+}
+
+.about-text {
+    flex: 1;
+    max-width: 55%; /* A szöveg szélessége a bal oldalon */
+    text-align: left;
+}
+
+.about-image {
+    flex: 0 0 30%; /* A kép jobbra tolása */
+    margin-left: 40px; /* Helyet biztosít a kép és szöveg között */
+    text-align: right; /* Igazítsa a képet jobbra */
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Opcionális lekerekítés */
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text, .about-image {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .about-text {
+        margin-bottom: 20px;
+    }
 }
 
 /* Tanulmányaim szekció */
@@ -168,6 +207,46 @@ nav ul li a:hover {
     flex-direction: column; /* Mobilon egymás alatt jelenjenek meg */
     gap: 20px;
 }
+
+.hobby-image {
+    max-width: 100%;  /* Eredeti méret visszaállítása */
+    height: auto;
+    margin-top: 10px; /* Kicsi hely a kép és a szöveg között */
+    border-radius: 8px; /* Opcionális lekerekítés a kép sarkainál */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék a kép alatt */
+}
+
+/* Közepes méretű kép Zsonglőrködéshez */
+.medium-image {
+    max-width: 50px;  /* Kisebb, de nagyobb mint a kicsinyített méret */
+    height: auto;
+}
+
+.tab {
+    background-color: #57cc99;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab h3, .tab p {
+    color: #ffffff;
+}
+
+@media (min-width: 600px) {
+    .tab {
+        width: 48%; 
+    }
+}
+
+@media (min-width: 1024px) {
+    .tab {
+        width: 30%;
+    }
+}
+
 
 .tab {
     background-color: #57cc99;
