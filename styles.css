@@ -155,44 +155,76 @@ nav ul li a:hover {
 
 /* Készségeim szekció */
 .skills {
-    background-color: #57cc99; /* Készségeim világos zöld */
-    padding: 60px 0;
+    background-color: #57cc99;
+    padding: 20px;
     text-align: center;
 }
 
 .skills h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #ffffff; /* Fehér szöveg */
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .skills-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Alapértelmezett mobilon egymás alatt */
     align-items: center;
+    gap: 20px;
 }
 
 .skill {
-    background-color: #ffffff; /* Fehér kártyák */
+    background-color: #ffffff;
     padding: 15px;
-    margin: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     text-align: left;
-    border: 2px solid #57cc99; /* Készségek keret */
-    border-radius: 10px;
+    border: 2px solid #57cc99;
+    border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .skill h3 {
-    font-size: 22px;
+    font-size: 18px;
+    color: #38a3a5;
     margin-bottom: 10px;
-    color: #38a3a5; /* Sötét szöveg */
 }
+
+.skill p {
+    color: #555;
+}
+
 .skill:hover {
     transform: translateY(-10px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+/* Média lekérdezések nagyobb kijelzőkhöz */
+
+/* Táblagépek (600px-től) */
+@media (min-width: 600px) {
+    .skills-list {
+        flex-direction: row; /* Több oszlopos elrendezés tableteken */
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .skill {
+        width: calc(50% - 20px); /* Két oszlop tableteken */
+    }
+}
+
+/* Asztali gépek (1024px-től) */
+@media (min-width: 1024px) {
+    .skills-list {
+        flex-direction: row;
+        justify-content: space-between; /* Egyenletes elosztás */
+    }
+
+    .skill {
+        width: calc(20% - 20px); /* Egy sorban helyezkednek el asztali gépeken */
+    }
+}
+
 
 /* Érdeklődési köreim szekció */
 #hobbies {
@@ -202,23 +234,30 @@ nav ul li a:hover {
     margin: 0 auto;
 }
 
+#hobbies h2 {
+    text-align: center; /* Középre igazítja a címet */
+    margin-bottom: 20px; /* Térköz a cím és a dobozok között */
+    color: #38a3a5; /* Cím színe */
+}
+
 .hobby-tabs {
     display: flex;
-    flex-direction: column; /* Mobilon egymás alatt jelenjenek meg */
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Egyenletes elosztás */
+    gap: 20px; /* Kis hézag a dobozok között */
 }
 
 .hobby-image {
     max-width: 100%;  /* Eredeti méret visszaállítása */
     height: auto;
-    margin-top: 10px; /* Kicsi hely a kép és a szöveg között */
-    border-radius: 8px; /* Opcionális lekerekítés a kép sarkainál */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Finom árnyék a kép alatt */
+    margin-top: 10px;
+    border-radius: 8px; /* Opcionális lekerekítés */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Közepes méretű kép Zsonglőrködéshez */
 .medium-image {
-    max-width: 50px;  /* Kisebb, de nagyobb mint a kicsinyített méret */
+    max-width: 200px; /* Zsonglőrködés kép mérete */
     height: auto;
 }
 
@@ -226,7 +265,7 @@ nav ul li a:hover {
     background-color: #57cc99;
     border-radius: 8px;
     padding: 15px;
-    width: 100%; 
+    width: calc(33.333% - 20px); /* Harmadolás és hely biztosítása */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -247,6 +286,19 @@ nav ul li a:hover {
     }
 }
 
+/* Kisebb képernyők esetén */
+@media (max-width: 768px) {
+    .tab {
+        width: calc(50% - 20px); /* Két oszlopos elrendezés táblagépeken */
+    }
+}
+
+/* Mobil eszközökre */
+@media (max-width: 480px) {
+    .tab {
+        width: 100%; /* Egy oszlopos elrendezés mobilokon */
+    }
+}
 
 .tab {
     background-color: #57cc99;
