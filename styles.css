@@ -109,6 +109,10 @@ nav ul li a:hover {
     font-size: 14px;
     color: #555;
 }
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
 /* Készségeim szekció */
 .skills {
@@ -146,6 +150,67 @@ nav ul li a:hover {
     margin-bottom: 10px;
     color: #38a3a5; /* Sötét szöveg */
 }
+.skill:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Érdeklődési köreim szekció */
+#hobbies {
+    padding: 20px;
+    background-color: #ffffff;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.hobby-tabs {
+    display: flex;
+    flex-direction: column; /* Mobilon egymás alatt jelenjenek meg */
+    gap: 20px;
+}
+
+.tab {
+    background-color: #57cc99;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%; /* Alapértelmezett szélesség mobilon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tab h3 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.tab p {
+    color: #ffffff;
+}
+
+.tab:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nagyobb kijelzőkhöz (táblagépek) */
+@media (min-width: 600px) {
+    .hobby-tabs {
+        flex-direction: row; /* Táblagépen oldalra rendezés */
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        width: 48%; /* Táblagépen két oszlopban */
+    }
+}
+
+/* Nagyobb kijelzőkhöz (asztali gépek) */
+@media (min-width: 1024px) {
+    .tab {
+        width: 30%; /* Asztali gépen három oszlopban */
+    }
+}
+
 
 /* Kapcsolat szekció */
 .contact {
